@@ -1,0 +1,61 @@
+Por: Gallardo Pérez Carlos David – 15211292
+Maestro: Ray Parra
+Fecha: 07/09/2018
+
+1.  Dibuje un arbol con la estructura basica de un proyecto y una aplicación de Django 
+proyecto:
+Nombre_project/
+	manage.py
+	Nombre_project/
+		__init__.py
+		settings.py
+		urls.py
+		wsgi.py
+Aplicación:
+Nombre_app/
+	__init__.py
+	admin.py
+	apps.py
+	models.py
+	tests.py
+	views.py
+	migrations/
+		__init__.py
+
+
+2.  Mencione tres argumentos que gestiona el comando manage.py 
+python manage.py runserver
+python manage.py createsuperuser
+python manage.py makemigrations nombre_app
+
+3.  Explique la diferencia de utilizar urls global y urls local
+
+4.  Escriba un patron de url para una vista basada en funcion
+from django.urls import path
+from . import views
+urlpatterns = {
+	path('nombre_url/', views.indice, name = ‘indice’),
+]
+
+5.  Escriba un patron de url para una vista basada en clase 
+from django.conf.urls import patterns, url, include
+from django.views.generic import TemplateView
+urlpatterns = patterns('',
+    (r'^direccion/', TemplateView.as_view(plantilla_name="algo.html")),
+)
+
+6.  Escriba el comando para hacer un proyecto en Django 
+python manage.py startproject nombre_project
+
+
+7.  Escriba el comando para hacer una aplicación en Django 
+python mange.py startapp nombre_app
+
+8.  Mencione para que sirve el archivo Settings.py 
+Para adjuntar las aplicaciones necesarias que mostraremos en nuestro proyecto, ademas de incluir las direcciones url que utilizaremos
+
+9.  Escriba el comando para registrar las migraciones de los modelos 
+python manage.py makemigrations nombre_app
+
+10. Escriba el comando para sincronizar el modelo con el motor de base de datos. 
+python manage.py migrate
